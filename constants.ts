@@ -28,7 +28,7 @@ export const INITIAL_SETTINGS: AppSettings = {
   // Visual Defaults
   dialogueColor: '#e4e4e7', // Zinc-200 (Bright for speech)
   thoughtColor: '#a1a1aa',  // Zinc-400 (Dimmer/Italic for actions)
-  actionButtonColor: '#ea580c', // Orange-600
+  actionButtonColor: '#8b5cf6', // Purple-500 (JanitorAI style)
   actionButtonOpacity: 1.0,
 
   apiProvider: 'gemini',

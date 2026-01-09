@@ -39,7 +39,7 @@ const ToastContainer = ({ toasts }: { toasts: Toast[] }) => {
         >
           {toast.type === 'success' && <Check size={14} className="text-emerald-500" />}
           {toast.type === 'error' && <AlertCircle size={14} className="text-red-500" />}
-          {toast.type === 'info' && <Sparkles size={14} className="text-orange-500" />}
+          {toast.type === 'info' && <Sparkles size={14} className="text-purple-500" />}
           {toast.message}
         </div>
       ))}
@@ -155,7 +155,7 @@ const Sidebar = ({
       <div className={`fixed inset-y-0 left-0 z-40 w-80 lg:w-96 bg-[#050505] border-r border-zinc-900/50 transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:static flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.5)] shrink-0`}>
         
         <div className="p-8 pb-4 flex items-center justify-between shrink-0">
-          <h1 className="text-3xl font-serif font-bold text-orange-500 tracking-widest drop-shadow-[0_0_15px_rgba(234,88,12,0.4)] animate-pulse-slow">
+          <h1 className="text-3xl font-serif font-bold text-purple-500 tracking-widest drop-shadow-[0_0_15px_rgba(234,88,12,0.4)] animate-pulse-slow">
             EREBOS
           </h1>
           <button onClick={onClose} className="md:hidden text-zinc-500 hover:text-white transition-colors">
@@ -184,21 +184,21 @@ const Sidebar = ({
                     <>
                       <button 
                         onClick={() => setManageMode('chars')}
-                        className="text-zinc-600 hover:text-orange-500 transition-colors"
+                        className="text-zinc-600 hover:text-purple-500 transition-colors"
                         title="Manage Entities"
                       >
                         <ListChecks size={14} />
                       </button>
                       <button 
                         onClick={onCreateChar}
-                        className="text-zinc-600 hover:text-orange-500 transition-colors"
+                        className="text-zinc-600 hover:text-purple-500 transition-colors"
                         title="Create Entity"
                       >
                         <Plus size={14} />
                       </button>
                       <button 
                         onClick={() => fileInputRef.current?.click()}
-                        className="text-zinc-600 hover:text-orange-500 transition-colors"
+                        className="text-zinc-600 hover:text-purple-500 transition-colors"
                         title="Upload Entity"
                       >
                         <Upload size={14} />
@@ -214,26 +214,26 @@ const Sidebar = ({
                     key={char.id}
                     onClick={() => manageMode === 'chars' ? toggleSelection(char.id) : onSelectChar(char.id)}
                     className={`group relative flex items-center gap-4 p-3 rounded-[4px] cursor-pointer transition-all duration-500 border border-transparent 
-                    ${manageMode === 'chars' && selectedIds.has(char.id) ? 'bg-orange-950/20 border-orange-500/30' : ''}
-                    ${!manageMode && activeCharId === char.id ? 'bg-zinc-900/40 border-orange-900/30 shadow-[inset_0_0_20px_rgba(234,88,12,0.05)]' : 'hover:bg-zinc-900/30 hover:border-zinc-800'}`}
+                    ${manageMode === 'chars' && selectedIds.has(char.id) ? 'bg-purple-950/20 border-purple-500/30' : ''}
+                    ${!manageMode && activeCharId === char.id ? 'bg-zinc-900/40 border-purple-900/30 shadow-[inset_0_0_20px_rgba(234,88,12,0.05)]' : 'hover:bg-zinc-900/30 hover:border-zinc-800'}`}
                 >
                     {manageMode === 'chars' ? (
-                         <div className={`text-orange-500 transition-transform duration-300 ${selectedIds.has(char.id) ? 'scale-110' : 'opacity-50 scale-100'}`}>
+                         <div className={`text-purple-500 transition-transform duration-300 ${selectedIds.has(char.id) ? 'scale-110' : 'opacity-50 scale-100'}`}>
                             {selectedIds.has(char.id) ? <CheckSquare size={16} /> : <Square size={16} />}
                          </div>
                     ) : (
                         <>
                             {activeCharId === char.id && (
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-6 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.8)] rounded-r"></div>
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-6 bg-purple-500 shadow-[0_0_8px_rgba(249,115,22,0.8)] rounded-r"></div>
                             )}
                         </>
                     )}
                     
                     <div className="relative" onClick={(e) => { e.stopPropagation(); onViewImage(char.avatarUrl); }}>
-                        <img src={char.avatarUrl} alt={char.name} className={`w-10 h-10 rounded-full object-cover transition-all duration-500 hover:scale-110 hover:ring-2 hover:ring-orange-500/50 cursor-zoom-in ${activeCharId === char.id ? 'grayscale-0 ring-1 ring-orange-500/50 shadow-[0_0_10px_rgba(234,88,12,0.2)]' : 'grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0'}`} />
+                        <img src={char.avatarUrl} alt={char.name} className={`w-10 h-10 rounded-full object-cover transition-all duration-500 hover:scale-110 hover:ring-2 hover:ring-purple-500/50 cursor-zoom-in ${activeCharId === char.id ? 'grayscale-0 ring-1 ring-purple-500/50 shadow-[0_0_10px_rgba(234,88,12,0.2)]' : 'grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0'}`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                        <h3 className={`font-serif font-medium truncate tracking-wide text-sm transition-colors duration-300 ${activeCharId === char.id ? 'text-orange-100' : 'text-zinc-400 group-hover:text-zinc-200'}`}>{char.name}</h3>
+                        <h3 className={`font-serif font-medium truncate tracking-wide text-sm transition-colors duration-300 ${activeCharId === char.id ? 'text-purple-100' : 'text-zinc-400 group-hover:text-zinc-200'}`}>{char.name}</h3>
                         <p className="text-[10px] text-zinc-600 truncate group-hover:text-zinc-500 transition-colors duration-300">{char.tagline || "Unknown Entity"}</p>
                     </div>
                     
@@ -248,7 +248,7 @@ const Sidebar = ({
                             </button>
                             <button 
                                 onClick={(e) => { e.stopPropagation(); onEditChar(char); }}
-                                className="p-1.5 text-zinc-600 hover:text-orange-500 transition-colors"
+                                className="p-1.5 text-zinc-600 hover:text-purple-500 transition-colors"
                                 title="Entity Configuration"
                             >
                                 <Settings size={14} />
@@ -287,7 +287,7 @@ const Sidebar = ({
                  ) : (
                     <button 
                         onClick={() => setManageMode('sessions')}
-                        className="text-zinc-600 hover:text-orange-500 transition-colors"
+                        className="text-zinc-600 hover:text-purple-500 transition-colors"
                         title="Manage Memories"
                     >
                         <ListChecks size={12} />
@@ -301,11 +301,11 @@ const Sidebar = ({
                     key={session.id}
                     onClick={() => manageMode === 'sessions' ? toggleSelection(session.id) : onSelectSession(session.id)}
                     className={`group flex items-center justify-between p-2 pl-3 rounded-[2px] text-xs cursor-pointer transition-all duration-300 
-                    ${manageMode === 'sessions' && selectedIds.has(session.id) ? 'bg-orange-950/20 text-orange-400' : ''}
-                    ${!manageMode && activeSessionId === session.id ? 'text-orange-400 bg-orange-950/10 border-l-2 border-orange-500/50' : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/20 border-l-2 border-transparent'}`}
+                    ${manageMode === 'sessions' && selectedIds.has(session.id) ? 'bg-purple-950/20 text-purple-400' : ''}
+                    ${!manageMode && activeSessionId === session.id ? 'text-purple-400 bg-purple-950/10 border-l-2 border-purple-500/50' : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/20 border-l-2 border-transparent'}`}
                     >
                     {manageMode === 'sessions' && (
-                         <div className={`mr-3 text-orange-500 transition-transform duration-300 ${selectedIds.has(session.id) ? 'scale-110' : 'opacity-50 scale-100'}`}>
+                         <div className={`mr-3 text-purple-500 transition-transform duration-300 ${selectedIds.has(session.id) ? 'scale-110' : 'opacity-50 scale-100'}`}>
                             {selectedIds.has(session.id) ? <CheckSquare size={12} /> : <Square size={12} />}
                          </div>
                     )}
@@ -322,7 +322,7 @@ const Sidebar = ({
                             </button>
                             <button 
                                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); onRenameSession(session.id); }}
-                                className="p-1 hover:text-orange-400 transition-colors"
+                                className="p-1 hover:text-purple-400 transition-colors"
                             >
                                 <Pencil size={10} />
                             </button>
@@ -413,10 +413,10 @@ const MessageEditor = ({ initialContent, role, isFirstMessage, onSave, onCancel,
                 onChange={(e) => setContent(e.target.value)}
                 className={`
                     w-full resize-none overflow-hidden outline-none p-5 text-sm md:text-base leading-7 tracking-wide rounded-2xl
-                    focus:ring-1 focus:ring-orange-500/50 transition-all duration-200 shadow-xl
+                    focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 shadow-xl
                     ${role === 'user' 
-                        ? 'bg-zinc-900/60 text-zinc-200 border border-orange-500/60 rounded-tr-sm' 
-                        : 'bg-black/60 text-zinc-200 border border-orange-500/30 rounded-tl-sm'
+                        ? 'bg-zinc-900/60 text-zinc-200 border border-purple-500/60 rounded-tr-sm' 
+                        : 'bg-black/60 text-zinc-200 border border-purple-500/30 rounded-tl-sm'
                     }
                 `}
             />
@@ -443,7 +443,7 @@ const MessageEditor = ({ initialContent, role, isFirstMessage, onSave, onCancel,
                     <button 
                         onClick={onRegenerate}
                         disabled={isGenerating}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 text-[10px] font-bold uppercase tracking-wider text-orange-500/80 hover:text-orange-400 transition-all disabled:opacity-50"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 text-[10px] font-bold uppercase tracking-wider text-purple-500/80 hover:text-purple-400 transition-all disabled:opacity-50"
                     >
                         <RefreshCw size={10} className={isGenerating ? "animate-spin" : ""} /> Regenerate
                     </button>
@@ -451,7 +451,7 @@ const MessageEditor = ({ initialContent, role, isFirstMessage, onSave, onCancel,
 
                 <button 
                     onClick={() => onSave(content)}
-                    className="flex items-center gap-1.5 px-4 py-1.5 rounded bg-orange-600 hover:bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)] transition-all border border-orange-500/50"
+                    className="flex items-center gap-1.5 px-4 py-1.5 rounded bg-purple-600 hover:bg-purple-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(234,88,12,0.3)] hover:shadow-[0_0_25px_rgba(234,88,12,0.5)] transition-all border border-purple-500/50"
                 >
                     <Save size={10} /> Save
                 </button>
@@ -469,7 +469,7 @@ const ThoughtBlock = ({ content }: { content: string }) => {
         <div className="mb-4 rounded bg-zinc-900/30 border border-zinc-800 overflow-hidden">
             <button 
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full flex items-center justify-between p-2 px-3 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 hover:bg-zinc-800/50 transition-colors"
+                className="w-full flex items-center justify-between p-2 px-3 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-purple-500 hover:bg-zinc-800/50 transition-colors"
             >
                 <div className="flex items-center gap-2">
                     <BrainCircuit size={14} />
@@ -1678,7 +1678,7 @@ function App() {
                 />
             </>
         ) : (
-             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-900/40 via-[#030303] to-[#030303] z-0 transition-all duration-700"></div>
+             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#030303] to-[#030303] z-0 transition-all duration-700"></div>
         )}
 
         <div className="flex-1 flex flex-col relative z-10 h-full">
@@ -1691,10 +1691,10 @@ function App() {
                     {activeChar && activeSession && (
                     <div className="flex items-center gap-4 animate-slide-up-fade min-w-0 flex-1">
                         <div className="relative group cursor-pointer shrink-0">
-                            <div className="absolute inset-0 bg-orange-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <div className="absolute inset-0 bg-purple-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                             <img 
                                 src={activeChar.avatarUrl} 
-                                className="relative w-12 h-12 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-orange-500/50 transition-all duration-500 shadow-lg cursor-zoom-in" 
+                                className="relative w-12 h-12 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-purple-500/50 transition-all duration-500 shadow-lg cursor-zoom-in" 
                                 onClick={(e) => { e.stopPropagation(); setViewedImage(activeChar.avatarUrl); }}
                             />
                             <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-black shadow-[0_0_8px_rgba(16,185,129,0.5)] pointer-events-none"></div>
@@ -1706,12 +1706,12 @@ function App() {
                                 </h2>
                                 <button 
                                     onClick={(e) => { e.stopPropagation(); setEditingChar(activeChar); setIsCharModalOpen(true); }}
-                                    className="shrink-0 text-zinc-700 hover:text-orange-500 transition-colors p-1"
+                                    className="shrink-0 text-zinc-700 hover:text-purple-500 transition-colors p-1"
                                 >
                                     <Edit2 size={14} />
                                 </button>
                             </div>
-                            <p className="text-[10px] text-orange-500/80 uppercase tracking-widest font-medium">
+                            <p className="text-[10px] text-purple-500/80 uppercase tracking-widest font-medium">
                                 {activeSession ? `// ${activeSession.name}` : '// STANDBY'}
                             </p>
                         </div>
@@ -1724,7 +1724,7 @@ function App() {
                         manageMode === 'messages' ? (
                             <button 
                                 onClick={() => handleSetManageMode(null)} 
-                                className="p-2 text-orange-500 bg-orange-500/10 rounded-md hover:bg-orange-500/20 transition-all duration-300"
+                                className="p-2 text-purple-500 bg-purple-500/10 rounded-md hover:bg-purple-500/20 transition-all duration-300"
                                 title="Exit Selection"
                             >
                                 <X size={18} />
@@ -1732,7 +1732,7 @@ function App() {
                         ) : (
                             <button 
                                 onClick={() => handleSetManageMode('messages')}
-                                className="p-2 text-zinc-400 hover:text-orange-400 hover:bg-white/5 rounded-md transition-all duration-300"
+                                className="p-2 text-zinc-400 hover:text-purple-400 hover:bg-white/5 rounded-md transition-all duration-300"
                                 title="Manage Messages"
                             >
                                 <ListChecks size={18} />
@@ -1764,22 +1764,22 @@ function App() {
                     <div 
                         onClick={handleOrbClick}
                         className={`
-                        w-32 h-32 rounded-full border border-orange-900/50 flex items-center justify-center 
+                        w-32 h-32 rounded-full border border-purple-900/50 flex items-center justify-center 
                         transition-all duration-300 cursor-pointer
-                        ${isOrbFlashed ? 'bg-orange-500 shadow-[0_0_100px_rgba(249,115,22,0.8)] scale-110 border-orange-400' : 'bg-transparent shadow-[0_0_30px_rgba(234,88,12,0.2)] hover:border-orange-500/80 hover:shadow-[0_0_60px_rgba(234,88,12,0.3)] hover:scale-105'}
+                        ${isOrbFlashed ? 'bg-purple-500 shadow-[0_0_100px_rgba(249,115,22,0.8)] scale-110 border-purple-400' : 'bg-transparent shadow-[0_0_30px_rgba(234,88,12,0.2)] hover:border-purple-500/80 hover:shadow-[0_0_60px_rgba(234,88,12,0.3)] hover:scale-105'}
                         `}
                     >
                         <Sparkles 
                             size={40} 
                             className={`
                             transition-all duration-300
-                            ${isOrbFlashed ? 'text-white scale-125 rotate-45' : 'text-orange-500 hover:rotate-12'}
+                            ${isOrbFlashed ? 'text-white scale-125 rotate-45' : 'text-purple-500 hover:rotate-12'}
                             `} 
                         />
                     </div>
                     <div className="text-center font-serif pointer-events-none group">
-                        <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-white to-orange-200 tracking-[0.2em] mb-2 font-bold transition-colors">MANIFESTATION</h3>
-                        <p className="text-orange-900 text-xs tracking-widest uppercase font-bold transition-colors duration-300 group-hover:text-orange-500">Select an entity to begin communion</p>
+                        <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-br from-white to-purple-200 tracking-[0.2em] mb-2 font-bold transition-colors">MANIFESTATION</h3>
+                        <p className="text-purple-900 text-xs tracking-widest uppercase font-bold transition-colors duration-300 group-hover:text-purple-500">Select an entity to begin communion</p>
                     </div>
                 </div>
             ) : (
@@ -1812,7 +1812,7 @@ function App() {
                         className={`flex flex-col gap-2 group/message animate-slide-up-fade relative ${msg.role === 'user' ? 'items-end' : 'items-start'} ${manageMode === 'messages' && idx !== 0 ? 'cursor-pointer hover:opacity-90 pl-12' : ''}`}
                         >
                             {manageMode === 'messages' && idx !== 0 && (
-                                <div className={`absolute left-0 top-1/2 -translate-y-1/2 transition-all duration-300 z-20 ${selectedIds.has(msg.id) ? 'text-orange-500 scale-110' : 'text-zinc-700'}`}>
+                                <div className={`absolute left-0 top-1/2 -translate-y-1/2 transition-all duration-300 z-20 ${selectedIds.has(msg.id) ? 'text-purple-500 scale-110' : 'text-zinc-700'}`}>
                                     {selectedIds.has(msg.id) ? <CheckSquare size={24} /> : <Square size={24} />}
                                 </div>
                             )}
@@ -1850,11 +1850,11 @@ function App() {
                                                 ${msg.role === 'user' 
                                                 ? 'bg-zinc-900/40 text-zinc-300 border shadow-[0_0_15px_-3px_rgba(249,115,22,0.15)] rounded-2xl rounded-tr-sm' 
                                                 : 'bg-black/40 text-zinc-200 border shadow-[0_0_20px_-5px_rgba(249,115,22,0.05)] rounded-2xl rounded-tl-sm'}
-                                                ${manageMode === 'messages' && selectedIds.has(msg.id) ? 'border-orange-500 bg-orange-950/20' : msg.role === 'user' ? 'border-orange-500/60' : 'border-orange-500/30'}
+                                                ${manageMode === 'messages' && selectedIds.has(msg.id) ? 'border-purple-500 bg-purple-950/20' : msg.role === 'user' ? 'border-purple-500/60' : 'border-purple-500/30'}
                                             `}
                                         >
                                             {msg.role === 'model' && (
-                                                <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/0 via-zinc-900/0 to-orange-900/10 pointer-events-none rounded-2xl"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/0 via-zinc-900/0 to-purple-900/10 pointer-events-none rounded-2xl"></div>
                                             )}
                                             
                                             <div className="whitespace-pre-wrap font-light relative z-10 select-text cursor-text">
@@ -1864,7 +1864,7 @@ function App() {
 
                                             {translationState && translationState.visible && (
                                                 <div className="mt-3 pt-3 border-t border-white/10 relative z-10 animate-slide-up-fade">
-                                                    <div className="flex items-center gap-2 mb-1 text-[10px] uppercase font-bold text-orange-500/80 tracking-wider">
+                                                    <div className="flex items-center gap-2 mb-1 text-[10px] uppercase font-bold text-purple-500/80 tracking-wider">
                                                         <Languages size={10} /> Translation
                                                     </div>
                                                     {translationState.loading ? (
@@ -1886,7 +1886,7 @@ function App() {
                                                         <div className="flex items-center gap-1 mr-auto bg-black/40 rounded px-1.5 py-0.5 border border-white/5">
                                                             <button 
                                                                 onClick={() => handleSwipeMessage(msg.id, 'left')}
-                                                                className="text-zinc-500 hover:text-orange-500 transition-colors p-0.5 disabled:opacity-30 disabled:hover:text-zinc-500 disabled:cursor-not-allowed"
+                                                                className="text-zinc-500 hover:text-purple-500 transition-colors p-0.5 disabled:opacity-30 disabled:hover:text-zinc-500 disabled:cursor-not-allowed"
                                                                 disabled={currentSwipeIdx === 0}
                                                             >
                                                                 <ChevronLeft size={10} />
@@ -1894,7 +1894,7 @@ function App() {
                                                             <span className="text-[9px] font-mono text-zinc-400">{currentSwipeIdx + 1}/{swipesCount}</span>
                                                             <button 
                                                                 onClick={() => handleSwipeMessage(msg.id, 'right')}
-                                                                className="text-zinc-500 hover:text-orange-500 transition-colors p-0.5 disabled:opacity-30 disabled:hover:text-zinc-500 disabled:cursor-not-allowed"
+                                                                className="text-zinc-500 hover:text-purple-500 transition-colors p-0.5 disabled:opacity-30 disabled:hover:text-zinc-500 disabled:cursor-not-allowed"
                                                                 disabled={currentSwipeIdx === swipesCount - 1}
                                                             >
                                                                 <ChevronRight size={10} />
@@ -1904,7 +1904,7 @@ function App() {
 
                                                     <button 
                                                         onClick={() => toggleMessageTranslation(msg.id, displayContent, msg.role)} 
-                                                        className={`p-1 rounded hover:bg-white/5 transition-colors ${translationState?.visible ? 'text-orange-500' : ''}`}
+                                                        className={`p-1 rounded hover:bg-white/5 transition-colors ${translationState?.visible ? 'text-purple-500' : ''}`}
                                                         style={!translationState?.visible ? { color: settings.actionButtonColor, opacity: settings.actionButtonOpacity } : {}}
                                                         title="Translate"
                                                     >
@@ -1981,9 +1981,9 @@ function App() {
                         <div className="flex items-start gap-4 animate-pulse">
                             <div className="w-8 h-8 rounded-sm bg-zinc-900 shadow-inner"></div>
                             <div className="flex gap-1.5 pt-3">
-                                <div className="w-1 h-1 bg-orange-500/50 rounded-full animate-bounce shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
-                                <div className="w-1 h-1 bg-orange-500/50 rounded-full animate-bounce delay-150 shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
-                                <div className="w-1 h-1 bg-orange-500/50 rounded-full animate-bounce delay-300 shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
+                                <div className="w-1 h-1 bg-purple-500/50 rounded-full animate-bounce shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
+                                <div className="w-1 h-1 bg-purple-500/50 rounded-full animate-bounce delay-150 shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
+                                <div className="w-1 h-1 bg-purple-500/50 rounded-full animate-bounce delay-300 shadow-[0_0_5px_rgba(249,115,22,0.5)]"></div>
                             </div>
                         </div>
                     )}
@@ -1999,9 +1999,9 @@ function App() {
                 {/* Translation Modal Overlay */}
                 {translation.visible && (
                     <div className="absolute bottom-full left-6 right-6 md:left-8 md:right-8 mb-2 z-30 animate-slide-up-fade">
-                        <div className="bg-[#0a0a0a] border border-orange-900/50 rounded-lg shadow-[0_0_30px_rgba(0,0,0,0.8)] overflow-hidden">
+                        <div className="bg-[#0a0a0a] border border-purple-900/50 rounded-lg shadow-[0_0_30px_rgba(0,0,0,0.8)] overflow-hidden">
                             <div className="flex items-center justify-between p-2 px-3 bg-zinc-900/50 border-b border-zinc-800">
-                                <span className="text-[10px] font-bold text-orange-500 uppercase tracking-widest flex items-center gap-2">
+                                <span className="text-[10px] font-bold text-purple-500 uppercase tracking-widest flex items-center gap-2">
                                     <Languages size={12} /> Translator // {translation.loading ? "Processing..." : "EN Output"}
                                 </span>
                                 <button onClick={() => setTranslation(prev => ({ ...prev, visible: false }))} className="text-zinc-500 hover:text-white">
@@ -2011,7 +2011,7 @@ function App() {
                             <div className="p-3">
                                 {translation.loading ? (
                                     <div className="flex items-center justify-center py-4">
-                                        <Loader2 className="animate-spin text-orange-500" size={20} />
+                                        <Loader2 className="animate-spin text-purple-500" size={20} />
                                     </div>
                                 ) : translation.error ? (
                                     <div className="text-center py-2">
@@ -2051,7 +2051,7 @@ function App() {
                                                     setInputVal(translation.translated);
                                                     setTranslation(prev => ({ ...prev, visible: false }));
                                                 }}
-                                                className="flex items-center gap-1 text-[10px] bg-orange-900/20 hover:bg-orange-900/40 border border-orange-900/50 text-orange-400 hover:text-orange-300 px-3 py-1 rounded transition-colors"
+                                                className="flex items-center gap-1 text-[10px] bg-purple-900/20 hover:bg-purple-900/40 border border-purple-900/50 text-purple-400 hover:text-purple-300 px-3 py-1 rounded transition-colors"
                                             >
                                                 <ArrowDown size={12} /> Replace Input
                                             </button>
@@ -2064,8 +2064,8 @@ function App() {
                 )}
 
                 <div className="max-w-6xl mx-auto relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/20 to-zinc-800/50 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-1000 group-focus-within:opacity-100 group-focus-within:duration-500"></div>
-                <div className="relative flex items-end gap-2 bg-[#080808] border border-zinc-800/50 rounded-lg p-2 shadow-2xl transition-colors duration-300 group-focus-within:border-orange-900/30">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-zinc-800/50 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-1000 group-focus-within:opacity-100 group-focus-within:duration-500"></div>
+                <div className="relative flex items-end gap-2 bg-[#080808] border border-zinc-800/50 rounded-lg p-2 shadow-2xl transition-colors duration-300 group-focus-within:border-purple-900/30">
                     <textarea
                     value={inputVal}
                     onChange={(e) => setInputVal(e.target.value)}
@@ -2091,7 +2091,7 @@ function App() {
                         className={`
                             p-3 transition-all duration-300 rounded-lg
                             ${inputVal.trim() && !isGenerating
-                                ? 'text-zinc-400 hover:text-orange-400 hover:bg-white/5'
+                                ? 'text-zinc-400 hover:text-purple-400 hover:bg-white/5'
                                 : 'text-zinc-700 opacity-30 cursor-not-allowed'
                             }
                         `}
@@ -2115,7 +2115,7 @@ function App() {
                         className={`
                             p-3 transition-all duration-300 rounded-lg
                             ${isReadyToSend 
-                                ? 'text-orange-500 hover:text-orange-400 shadow-[0_0_10px_rgba(234,88,12,0.4)] animate-pulse' 
+                                ? 'text-purple-500 hover:text-purple-400 shadow-[0_0_10px_rgba(234,88,12,0.4)] animate-pulse' 
                                 : 'text-zinc-600 opacity-30 cursor-not-allowed'
                             }
                         `}
@@ -2183,7 +2183,7 @@ function App() {
                 </button>
 
                 <div className="flex justify-center mb-8 relative">
-                    <div className="absolute inset-0 bg-orange-500/20 blur-xl rounded-full animate-pulse-slow"></div>
+                    <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full animate-pulse-slow"></div>
                     <div 
                         className="w-32 h-32 rounded-full p-1 bg-gradient-to-b from-zinc-700 to-black relative z-10 shadow-2xl cursor-zoom-in"
                         onClick={(e) => { e.stopPropagation(); setViewedImage(selectedCharForMenu.avatarUrl); }}
@@ -2195,7 +2195,7 @@ function App() {
                     </div>
                 </div>
                 <div className="text-center mb-8">
-                    <h3 className="text-xs font-serif text-orange-500 tracking-[0.3em] mb-2 uppercase drop-shadow-[0_0_8px_rgba(234,88,12,0.5)]">Manifestation // Character</h3>
+                    <h3 className="text-xs font-serif text-purple-500 tracking-[0.3em] mb-2 uppercase drop-shadow-[0_0_8px_rgba(234,88,12,0.5)]">Manifestation // Character</h3>
                     <h2 className="text-3xl font-serif font-bold text-white mb-2">{selectedCharForMenu.name}</h2>
                     <p className="text-xs text-zinc-500 font-light leading-relaxed max-w-[80%] mx-auto">
                         {selectedCharForMenu.tagline || selectedCharForMenu.description.slice(0, 80) + "..."}
@@ -2211,7 +2211,7 @@ function App() {
                         <History size={16} /> Resume Manifestation
                     </Button>
 
-                     <Button fullWidth variant="ghost" onClick={() => chatFileInputRef.current?.click()} className="flex items-center justify-center gap-2 py-4 text-zinc-600 hover:text-orange-400">
+                     <Button fullWidth variant="ghost" onClick={() => chatFileInputRef.current?.click()} className="flex items-center justify-center gap-2 py-4 text-zinc-600 hover:text-purple-400">
                         <FolderInput size={16} /> Import Record
                     </Button>
                     <input type="file" ref={chatFileInputRef} onChange={handleImportChat} className="hidden" accept=".json" />
@@ -2223,8 +2223,8 @@ function App() {
       {/* Session Action Modal */}
       {sessionAction && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-              <div className="bg-[#0a0a0a] border border-orange-900/30 p-6 rounded shadow-lg max-w-sm w-full m-4">
-                  <h4 className="text-orange-500 font-bold mb-4 uppercase tracking-wider">
+              <div className="bg-[#0a0a0a] border border-purple-900/30 p-6 rounded shadow-lg max-w-sm w-full m-4">
+                  <h4 className="text-purple-500 font-bold mb-4 uppercase tracking-wider">
                       {sessionAction.type === 'rename' && 'Rename Memory'}
                       {sessionAction.type === 'delete' && 'Delete Memory'}
                       {sessionAction.type === 'bulk_delete' && 'Bulk Delete'}
@@ -2232,7 +2232,7 @@ function App() {
                   
                   {sessionAction.type === 'rename' && (
                       <input 
-                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none mb-6"
+                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none mb-6"
                         value={renameInput}
                         onChange={(e) => setRenameInput(e.target.value)}
                         autoFocus

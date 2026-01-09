@@ -12,7 +12,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #030303;
+  background-color: #0a0a0a;
   color: #e5e5e5;
   overflow-x: hidden;
 }
@@ -22,23 +22,23 @@ body {
   width: 100%;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling - JanitorAI style */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030303;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: #2a2a2a;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea580c;
+  background: #8b5cf6;
 }
 
 /* Scrollbar classes for utility */

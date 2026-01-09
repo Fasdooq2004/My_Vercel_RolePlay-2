@@ -336,11 +336,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-0 md:p-4 transition-all duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-      <div className={`bg-[#050505] border-x md:border border-zinc-800 w-full max-w-4xl h-full md:h-[85vh] md:max-h-[800px] flex flex-col shadow-[0_0_50px_rgba(234,88,12,0.1)] relative transition-transform duration-300 ${isOpen ? 'scale-100' : 'scale-95'}`}>
+      <div className={`bg-[#050505] border-x md:border border-zinc-800 w-full max-w-4xl h-full md:h-[85vh] md:max-h-[800px] flex flex-col shadow-[0_0_50px_rgba(168,85,247,0.1)] relative transition-transform duration-300 ${isOpen ? 'scale-100' : 'scale-95'}`}>
 
         <div className="p-4 sm:p-6 pb-3 sm:pb-4 bg-[#080808] shrink-0 border-b border-zinc-900 flex justify-between items-start gap-4 sticky top-0 z-20">
             <div className="min-w-0 flex-1">
-                <h3 className="text-[10px] sm:text-xs font-serif text-orange-500 tracking-[0.2em] sm:tracking-[0.3em] mb-1 sm:mb-2 uppercase drop-shadow-[0_0_5px_rgba(234,88,12,0.5)]">Control Panel</h3>
+                <h3 className="text-[10px] sm:text-xs font-serif text-purple-500 tracking-[0.2em] sm:tracking-[0.3em] mb-1 sm:mb-2 uppercase drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]">Control Panel</h3>
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-wide truncate">CONFIGURATION</h2>
             </div>
             <div className="flex gap-1 sm:gap-2 shrink-0">
@@ -359,13 +359,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                     <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase transition-colors relative whitespace-nowrap min-w-[90px] sm:min-w-[120px] ${activeTab === tab.id ? 'text-orange-500 bg-zinc-900/30' : 'text-zinc-600 hover:text-zinc-400'}`}
+                        className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase transition-colors relative whitespace-nowrap min-w-[90px] sm:min-w-[120px] ${activeTab === tab.id ? 'text-purple-500 bg-zinc-900/30' : 'text-zinc-600 hover:text-zinc-400'}`}
                     >
                         {tab.id === 'general' && <Cpu size={12} className="sm:w-[14px] sm:h-[14px]" />}
                         {tab.id === 'generation' && <Sparkles size={12} className="sm:w-[14px] sm:h-[14px]" />}
                         {tab.id === 'world' && <Globe size={12} className="sm:w-[14px] sm:h-[14px]" />}
                         {tab.label}
-                        {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]" />}
+                        {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]" />}
                     </button>
                 ))}
             </div>
@@ -380,7 +380,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                         </h4>
                         <div className="flex gap-6 flex-col md:flex-row items-center md:items-start">
                              <div className="relative group cursor-pointer shrink-0" onClick={() => fileInputRef.current?.click()}>
-                                 <img src={localSettings.userAvatarUrl || "https://ui-avatars.com/api/?name=User&background=18181b&color=71717a"} alt="User" className="w-24 h-24 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-orange-500/50 transition-all" />
+                                 <img src={localSettings.userAvatarUrl || "https://ui-avatars.com/api/?name=User&background=18181b&color=71717a"} alt="User" className="w-24 h-24 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-purple-500/50 transition-all" />
                                  <div className="absolute inset-0 flex items-center justify-center bg-black/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                                     <Upload size={20} className="text-zinc-300" />
                                  </div>
@@ -388,8 +388,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                              <div className="flex-1 w-full space-y-4">
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Display Name</label>
-                                    <input 
-                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-sm"
+                                    <input
+                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-sm"
                                         value={localSettings.userName}
                                         onChange={(e) => handleChange('userName', e.target.value)}
                                         placeholder="User"
@@ -397,8 +397,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                 </div>
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Persona Description</label>
-                                    <textarea 
-                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-sm h-24 resize-none"
+                                    <textarea
+                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-sm h-24 resize-none"
                                         value={localSettings.userPersona}
                                         onChange={(e) => handleChange('userPersona', e.target.value)}
                                         placeholder="Briefly describe yourself to the AI..."
@@ -430,11 +430,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                             </div>
                              <div>
                                 <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Background Blur ({localSettings.backgroundBlur}px)</label>
-                                <input type="range" min="0" max="20" value={localSettings.backgroundBlur} onChange={(e) => handleChange('backgroundBlur', e.target.value)} className="w-full accent-orange-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
+                                <input type="range" min="0" max="20" value={localSettings.backgroundBlur} onChange={(e) => handleChange('backgroundBlur', e.target.value)} className="w-full accent-purple-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
                             </div>
                             <div>
                                 <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Background Opacity ({localSettings.backgroundOpacity})</label>
-                                <input type="range" min="0" max="1" step="0.1" value={localSettings.backgroundOpacity} onChange={(e) => handleChange('backgroundOpacity', e.target.value)} className="w-full accent-orange-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
+                                <input type="range" min="0" max="1" step="0.1" value={localSettings.backgroundOpacity} onChange={(e) => handleChange('backgroundOpacity', e.target.value)} className="w-full accent-purple-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" />
                             </div>
                         </div>
                         
@@ -475,7 +475,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                                 onClick={() => handleChange('apiProvider', p === 'kobold' ? 'custom' : p)}
                                                 className={`py-2 px-2 text-[10px] uppercase font-bold border transition-all truncate ${
                                                     (localSettings.apiProvider === p || (p === 'kobold' && localSettings.apiProvider === 'custom'))
-                                                    ? 'bg-orange-500/10 border-orange-500 text-orange-500 shadow-[0_0_10px_rgba(234,88,12,0.2)]'
+                                                    ? 'bg-purple-500/10 border-purple-500 text-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.2)]'
                                                     : 'bg-black border-zinc-800 text-zinc-500 hover:border-zinc-600'
                                                 }`}
                                             >
@@ -489,12 +489,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                     <div>
                                         <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">API Endpoint</label>
                                         <div className="relative">
-                                            <input 
-                                                className="w-full bg-black border border-zinc-800 p-3 pl-3 text-zinc-200 focus:border-orange-500/50 outline-none text-sm font-mono"
+                                            <input
+                                                className="w-full bg-black border border-zinc-800 p-3 pl-3 text-zinc-200 focus:border-purple-500/50 outline-none text-sm font-mono"
                                                 value={localSettings.customEndpoint}
                                                 onChange={(e) => handleChange('customEndpoint', e.target.value)}
                                                 placeholder={
-                                                    localSettings.apiProvider === 'openrouter' ? "https://openrouter.ai/api/v1" : 
+                                                    localSettings.apiProvider === 'openrouter' ? "https://openrouter.ai/api/v1" :
                                                     "http://localhost:5000/v1"
                                                 }
                                             />
@@ -506,9 +506,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                     <div>
                                         <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">API Key</label>
                                         <div className="relative">
-                                            <input 
+                                            <input
                                                 type="password"
-                                                className="w-full bg-black border border-zinc-800 p-3 pl-10 text-zinc-200 focus:border-orange-500/50 outline-none text-sm font-mono"
+                                                className="w-full bg-black border border-zinc-800 p-3 pl-10 text-zinc-200 focus:border-purple-500/50 outline-none text-sm font-mono"
                                                 value={localSettings.apiKey}
                                                 onChange={(e) => handleChange('apiKey', e.target.value)}
                                                 placeholder="sk-..."
@@ -519,7 +519,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                                     href="https://aistudio.google.com/app/apikey" 
                                                     target="_blank" 
                                                     rel="noopener noreferrer"
-                                                    className="absolute right-3 top-3.5 text-zinc-500 hover:text-orange-500 transition-colors"
+                                                    className="absolute right-3 top-3.5 text-zinc-500 hover:text-purple-500 transition-colors"
                                                     title="Get API Key"
                                                 >
                                                     <ExternalLink size={14} />
@@ -532,32 +532,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Model Name</label>
                                     {localSettings.apiProvider === 'horde' ? (
-                                        <select 
+                                        <select
                                             value={localSettings.modelName}
                                             onChange={(e) => handleChange('modelName', e.target.value)}
-                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-xs font-mono"
+                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-xs font-mono"
                                         >
                                             {HORDE_MODELS.map(m => <option key={m} value={m}>{m}</option>)}
                                         </select>
                                     ) : localSettings.apiProvider === 'gemini' ? (
-                                        <select 
+                                        <select
                                             value={localSettings.modelName}
                                             onChange={(e) => handleChange('modelName', e.target.value)}
-                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-xs font-mono"
+                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-xs font-mono"
                                         >
                                             {GEMINI_MODELS.map(m => <option key={m} value={m}>{m}</option>)}
                                         </select>
                                     ) : localSettings.apiProvider === 'deepseek' ? (
-                                        <select 
+                                        <select
                                             value={localSettings.modelName}
                                             onChange={(e) => handleChange('modelName', e.target.value)}
-                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-xs font-mono"
+                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-xs font-mono"
                                         >
                                             {DEEPSEEK_MODELS.map(m => <option key={m} value={m}>{m}</option>)}
                                         </select>
                                     ) : (
-                                        <input 
-                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-sm font-mono"
+                                        <input
+                                            className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-sm font-mono"
                                             value={localSettings.modelName}
                                             onChange={(e) => handleChange('modelName', e.target.value)}
                                             placeholder="gemini-2.0-flash"
@@ -610,7 +610,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                     {localSettings.savedPresets?.map(preset => (
                                         <div key={preset.id} className="flex items-center justify-between p-2 bg-black/40 hover:bg-black/60 rounded text-xs group">
                                             <div className="flex items-center gap-2 overflow-hidden">
-                                                <div className="text-orange-500"><Sliders size={12}/></div>
+                                                <div className="text-purple-500"><Sliders size={12}/></div>
                                                 {renamePresetId === preset.id ? (
                                                      <input 
                                                         className="bg-zinc-900 border border-zinc-700 text-zinc-200 px-1 py-0.5 w-24 outline-none"
@@ -628,7 +628,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                                 {renamePresetId === preset.id ? (
                                                     <button onClick={handleRenamePreset} className="text-emerald-500 p-1"><Check size={12}/></button>
                                                 ) : (
-                                                    <button onClick={() => { setRenamePresetId(preset.id); setRenamePresetName(preset.name); }} className="text-zinc-600 hover:text-orange-400 p-1"><Pencil size={12}/></button>
+                                                    <button onClick={() => { setRenamePresetId(preset.id); setRenamePresetName(preset.name); }} className="text-zinc-600 hover:text-purple-400 p-1"><Pencil size={12}/></button>
                                                 )}
                                                 <button onClick={() => loadPreset(preset)} className="text-zinc-600 hover:text-emerald-400 p-1" title="Load"><Upload size={12}/></button>
                                                 <button onClick={() => setPresetToDelete(preset.id)} className="text-zinc-600 hover:text-red-400 p-1" title="Delete"><Trash2 size={12}/></button>
@@ -653,10 +653,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                     <div className="flex justify-between mb-2">
                                         <label className="text-[10px] font-bold text-zinc-600 uppercase flex items-center gap-2"><FileCode size={12} /> Prompt Template</label>
                                     </div>
-                                    <select 
+                                    <select
                                         value={localSettings.promptTemplate || 'chatml'}
                                         onChange={(e) => handleChange('promptTemplate', e.target.value)}
-                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-orange-500/50 outline-none text-xs font-mono"
+                                        className="w-full bg-black border border-zinc-800 p-3 text-zinc-200 focus:border-purple-500/50 outline-none text-xs font-mono"
                                     >
                                         {PROMPT_TEMPLATES.map(t => <option key={t.id} value={t.id}>{t.label}</option>)}
                                     </select>
@@ -668,26 +668,26 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <label className="text-[10px] font-bold text-zinc-600 uppercase">Temperature</label>
-                                        <span className="text-[10px] font-mono text-orange-500">{localSettings.temperature}</span>
+                                        <span className="text-[10px] font-mono text-purple-500">{localSettings.temperature}</span>
                                     </div>
-                                    <input 
-                                        type="range" min="0" max="2" step="0.01" 
-                                        value={localSettings.temperature} 
-                                        onChange={(e) => handleChange('temperature', e.target.value)} 
-                                        className="w-full accent-orange-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" 
+                                    <input
+                                        type="range" min="0" max="2" step="0.01"
+                                        value={localSettings.temperature}
+                                        onChange={(e) => handleChange('temperature', e.target.value)}
+                                        className="w-full accent-purple-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer"
                                     />
                                 </div>
 
                                 <div>
                                     <div className="flex justify-between mb-2">
                                         <label className="text-[10px] font-bold text-zinc-600 uppercase">Max Output Tokens</label>
-                                        <span className="text-[10px] font-mono text-orange-500">{localSettings.maxOutputTokens}</span>
+                                        <span className="text-[10px] font-mono text-purple-500">{localSettings.maxOutputTokens}</span>
                                     </div>
-                                    <input 
-                                        type="range" min="128" max="8192" step="128" 
-                                        value={localSettings.maxOutputTokens} 
-                                        onChange={(e) => handleChange('maxOutputTokens', e.target.value)} 
-                                        className="w-full accent-orange-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer" 
+                                    <input
+                                        type="range" min="128" max="8192" step="128"
+                                        value={localSettings.maxOutputTokens}
+                                        onChange={(e) => handleChange('maxOutputTokens', e.target.value)}
+                                        className="w-full accent-purple-500 h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer"
                                     />
                                 </div>
 
@@ -752,7 +752,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                         <label className="text-[10px] font-bold text-zinc-500 uppercase">Min Length Enforcement</label>
                                         <button 
                                             onClick={() => handleChange('minOutputEnabled', !localSettings.minOutputEnabled)}
-                                            className={`transition-colors ${localSettings.minOutputEnabled ? 'text-orange-500' : 'text-zinc-700'}`}
+                                            className={`transition-colors ${localSettings.minOutputEnabled ? 'text-purple-500' : 'text-zinc-700'}`}
                                         >
                                             {localSettings.minOutputEnabled ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                                         </button>
@@ -778,7 +778,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                         <label className="text-[10px] font-bold text-zinc-500 uppercase">Stream Response</label>
                                         <button 
                                             onClick={() => handleChange('streamResponse', !localSettings.streamResponse)}
-                                            className={`transition-colors ${localSettings.streamResponse ? 'text-orange-500' : 'text-zinc-700'}`}
+                                            className={`transition-colors ${localSettings.streamResponse ? 'text-purple-500' : 'text-zinc-700'}`}
                                         >
                                             {localSettings.streamResponse ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                                         </button>
@@ -793,7 +793,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                             </label>
                                             <button 
                                                 onClick={() => handleChange('enableGoogleSearch', !localSettings.enableGoogleSearch)}
-                                                className={`transition-colors ${localSettings.enableGoogleSearch ? 'text-orange-500' : 'text-zinc-700'}`}
+                                                className={`transition-colors ${localSettings.enableGoogleSearch ? 'text-purple-500' : 'text-zinc-700'}`}
                                             >
                                                 {localSettings.enableGoogleSearch ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                                             </button>
@@ -826,16 +826,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                             <div className="bg-zinc-900/20 border border-zinc-800/50 rounded-lg p-4 mb-4 space-y-4 shrink-0">
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Lorebook Name</label>
-                                    <input 
-                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-orange-500/50 outline-none text-xs rounded"
+                                    <input
+                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-purple-500/50 outline-none text-xs rounded"
                                         value={editingLorebook.name}
                                         onChange={e => setEditingLorebook({...editingLorebook, name: e.target.value})}
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Description</label>
-                                    <input 
-                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-orange-500/50 outline-none text-xs rounded"
+                                    <input
+                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-purple-500/50 outline-none text-xs rounded"
                                         value={editingLorebook.description || ""}
                                         onChange={e => setEditingLorebook({...editingLorebook, description: e.target.value})}
                                     />
@@ -845,7 +845,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                             <div className="flex-1 flex flex-col min-h-0">
                                 <div className="flex items-center justify-between mb-2 shrink-0">
                                     <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Entries ({editingLorebook.entries.length})</label>
-                                    <button type="button" onClick={addEntryToEditor} className="text-[10px] flex items-center gap-1 text-orange-500 hover:text-orange-400 font-bold uppercase">
+                                    <button type="button" onClick={addEntryToEditor} className="text-[10px] flex items-center gap-1 text-purple-500 hover:text-purple-400 font-bold uppercase">
                                         <Plus size={12} /> Add Entry
                                     </button>
                                 </div>
@@ -855,8 +855,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                             <div className="flex items-start gap-3 mb-2">
                                                 <div className="mt-1 text-zinc-600"><Key size={14} /></div>
                                                 <div className="flex-1">
-                                                    <input 
-                                                        className="w-full bg-transparent border-b border-zinc-800 text-orange-200 text-xs py-1 focus:border-orange-500/50 outline-none placeholder-zinc-700 font-mono"
+                                                    <input
+                                                        className="w-full bg-transparent border-b border-zinc-800 text-purple-200 text-xs py-1 focus:border-purple-500/50 outline-none placeholder-zinc-700 font-mono"
                                                         placeholder="keywords, comma, separated"
                                                         value={entry.keys.join(', ')}
                                                         onChange={(e) => updateEntryInEditor(entry.id, 'keys', e.target.value)}
@@ -881,8 +881,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                                     </button>
                                                 </div>
                                             </div>
-                                            <textarea 
-                                                className="w-full bg-zinc-900/30 border border-zinc-800/50 rounded p-2 text-zinc-300 text-xs outline-none focus:border-orange-500/30 min-h-[80px] resize-y scrollbar-thin scrollbar-thumb-zinc-800"
+                                            <textarea
+                                                className="w-full bg-zinc-900/30 border border-zinc-800/50 rounded p-2 text-zinc-300 text-xs outline-none focus:border-purple-500/30 min-h-[80px] resize-y scrollbar-thin scrollbar-thumb-zinc-800"
                                                 placeholder="Lore content..."
                                                 value={entry.content}
                                                 onChange={(e) => updateEntryInEditor(entry.id, 'content', e.target.value)}
@@ -918,14 +918,14 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                             </button>
                                         </>
                                     ) : (
-                                        <button type="button" onClick={() => setManageLorebookMode(true)} className="p-2 text-zinc-600 hover:text-orange-500 transition-colors" title="Manage">
+                                        <button type="button" onClick={() => setManageLorebookMode(true)} className="p-2 text-zinc-600 hover:text-purple-500 transition-colors" title="Manage">
                                             <CheckSquare size={16} />
                                         </button>
                                     )}
                                  </div>
                              </div>
 
-                             <div className="bg-orange-950/10 border border-orange-900/30 p-4 rounded-lg mb-4 shrink-0">
+                             <div className="bg-purple-950/10 border border-purple-900/30 p-4 rounded-lg mb-4 shrink-0">
                                 <p className="text-[10px] text-zinc-400 leading-relaxed">
                                     Global Lorebooks are active across ALL chats and characters. Use them for general world-building, game mechanics, or persistent rules.
                                 </p>
@@ -944,7 +944,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                                 {manageLorebookMode ? (
                                                     <div 
                                                         onClick={() => toggleLorebookSelection(lb.id)}
-                                                        className={`cursor-pointer ${selectedLorebooks.has(lb.id) ? 'text-orange-500' : 'text-zinc-700 hover:text-zinc-500'}`}
+                                                        className={`cursor-pointer ${selectedLorebooks.has(lb.id) ? 'text-purple-500' : 'text-zinc-700 hover:text-zinc-500'}`}
                                                     >
                                                         {selectedLorebooks.has(lb.id) ? <CheckSquare size={16}/> : <Square size={16}/>}
                                                     </div>
@@ -971,11 +971,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, s
                                             </div>
                                             {!manageLorebookMode && (
                                                 <div className="flex items-center gap-2">
-                                                    <button type="button" onClick={() => startEditingLorebook(lb)} className="text-zinc-600 hover:text-orange-400 p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit Content"><Pencil size={12} /></button>
+                                                    <button type="button" onClick={() => startEditingLorebook(lb)} className="text-zinc-600 hover:text-purple-400 p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit Content"><Pencil size={12} /></button>
                                                     <button type="button" onClick={() => { setRenameLorebookId(lb.id); setRenameLorebookName(lb.name); }} className="text-zinc-600 hover:text-white p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Rename"><Edit size={12} /></button>
                                                     <button type="button" onClick={() => setLorebookToDelete(lb.id)} className="text-zinc-600 hover:text-red-500 p-1 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={12} /></button>
                                                     <div className="w-px h-3 bg-zinc-800 mx-1"></div>
-                                                    <button type="button" onClick={() => toggleLorebook(lb.id)} className={`transition-colors ${lb.enabled ? 'text-orange-500' : 'text-zinc-700 hover:text-zinc-500'}`}>
+                                                    <button type="button" onClick={() => toggleLorebook(lb.id)} className={`transition-colors ${lb.enabled ? 'text-purple-500' : 'text-zinc-700 hover:text-zinc-500'}`}>
                                                         {lb.enabled ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                                                     </button>
                                                 </div>

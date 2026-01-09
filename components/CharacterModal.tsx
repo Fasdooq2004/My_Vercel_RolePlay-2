@@ -841,11 +841,11 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
         <div className={containerClass}>
             {autoFillMenuField === field ? (
                  <div className="flex items-center gap-1 bg-zinc-900 border border-zinc-700 rounded p-1 shadow-xl animate-in fade-in zoom-in duration-200">
-                    <button type="button" onClick={() => handleAutoFill(field, 'short')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-orange-400 rounded text-zinc-400 transition-colors">Short</button>
+                    <button type="button" onClick={() => handleAutoFill(field, 'short')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-purple-400 rounded text-zinc-400 transition-colors">Short</button>
                     <div className="w-px h-3 bg-zinc-800"></div>
-                    <button type="button" onClick={() => handleAutoFill(field, 'medium')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-orange-400 rounded text-zinc-400 transition-colors">Medium</button>
+                    <button type="button" onClick={() => handleAutoFill(field, 'medium')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-purple-400 rounded text-zinc-400 transition-colors">Medium</button>
                     <div className="w-px h-3 bg-zinc-800"></div>
-                    <button type="button" onClick={() => handleAutoFill(field, 'long')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-orange-400 rounded text-zinc-400 transition-colors">Long</button>
+                    <button type="button" onClick={() => handleAutoFill(field, 'long')} className="px-2 py-1 text-[9px] font-bold uppercase hover:bg-zinc-800 hover:text-purple-400 rounded text-zinc-400 transition-colors">Long</button>
                     <button type="button" onClick={() => setAutoFillMenuField(null)} className="ml-1 p-1 text-zinc-500 hover:text-white hover:bg-zinc-800 rounded"><X size={10}/></button>
                  </div>
             ) : (
@@ -853,7 +853,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                     type="button"
                     onClick={() => setAutoFillMenuField(field)}
                     disabled={isAutoFilling === field}
-                    className="p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-orange-400 rounded-md transition-colors border border-zinc-700/50 backdrop-blur-sm"
+                    className="p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-purple-400 rounded-md transition-colors border border-zinc-700/50 backdrop-blur-sm"
                     title="Auto Fill"
                 >
                     {isAutoFilling === field ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
@@ -864,7 +864,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                 type="button"
                 onClick={() => handleTranslateField(field)}
                 disabled={translatingField === field || (!formData[field] && !originalValues[field])}
-                className="p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-orange-500 rounded-md transition-colors border border-zinc-700/50 backdrop-blur-sm disabled:opacity-30 disabled:cursor-not-allowed"
+                className="p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-purple-500 rounded-md transition-colors border border-zinc-700/50 backdrop-blur-sm disabled:opacity-30 disabled:cursor-not-allowed"
                 title={originalValues[field] ? "Restore Original" : "Translate (Auto Detect)"}
             >
                 {translatingField === field ? <Loader2 size={12} className="animate-spin" /> : originalValues[field] ? <RotateCcw size={12} /> : <Languages size={12} />}
@@ -881,7 +881,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
         <div className="p-4 sm:p-6 md:p-8 pb-3 md:pb-4 bg-[#080808] shrink-0 border-b border-zinc-900/50 relative sticky top-0 z-20">
             <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
-                    <h3 className="text-[10px] sm:text-xs font-serif text-orange-500 tracking-[0.2em] sm:tracking-[0.3em] mb-1 sm:mb-2 uppercase drop-shadow-[0_0_5px_rgba(234,88,12,0.5)]">Manifestation</h3>
+                    <h3 className="text-[10px] sm:text-xs font-serif text-purple-500 tracking-[0.2em] sm:tracking-[0.3em] mb-1 sm:mb-2 uppercase drop-shadow-[0_0_5px_rgba(234,88,12,0.5)]">Manifestation</h3>
                     <h2 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-wide truncate">
                         {character ? 'EDIT ENTITY' : 'CONJURE NEW ENTITY'}
                     </h2>
@@ -900,10 +900,10 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         key={tab.id}
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-3 sm:py-4 px-2 sm:px-4 text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase transition-colors relative whitespace-nowrap min-w-[80px] sm:min-w-[100px] ${activeTab === tab.id ? 'text-orange-500 bg-zinc-900/30' : 'text-zinc-600 hover:text-zinc-400'}`}
+                        className={`flex-1 flex items-center justify-center gap-1 sm:gap-2 py-3 sm:py-4 px-2 sm:px-4 text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase transition-colors relative whitespace-nowrap min-w-[80px] sm:min-w-[100px] ${activeTab === tab.id ? 'text-purple-500 bg-zinc-900/30' : 'text-zinc-600 hover:text-zinc-400'}`}
                     >
                         <tab.icon size={12} className="sm:w-[14px] sm:h-[14px]" /> <span className="hidden sm:inline">{tab.label}</span><span className="sm:hidden">{tab.label.length > 8 ? tab.label.substring(0, 7) + '.' : tab.label}</span>
-                        {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]" />}
+                        {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]" />}
                     </button>
                 ))}
             </div>
@@ -916,11 +916,11 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                 <div className="space-y-6 animate-slide-up-fade h-full flex flex-col">
                     {!showGenConsole ? (
                         <>
-                        <div className="p-4 bg-orange-950/10 border border-orange-900/30 rounded-lg shrink-0">
+                        <div className="p-4 bg-purple-950/10 border border-purple-900/30 rounded-lg shrink-0">
                             <div className="flex items-start gap-3">
-                                <Sparkles className="text-orange-500 shrink-0 mt-1" size={18} />
+                                <Sparkles className="text-purple-500 shrink-0 mt-1" size={18} />
                                 <div>
-                                    <h4 className="text-sm font-bold text-orange-100 mb-1">AI Character Generation</h4>
+                                    <h4 className="text-sm font-bold text-purple-100 mb-1">AI Character Generation</h4>
                                     <p className="text-[10px] text-zinc-400 leading-relaxed">
                                         Describe your idea or attach reference material (PDFs, Images), and the system will hallucinate a complete entity profile. 
                                     </p>
@@ -932,7 +932,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                             <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Concept / Specification</label>
                             <div className="relative flex-1">
                                 <textarea 
-                                    className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-orange-500/50 outline-none resize-none transition-all duration-300 font-light leading-relaxed shadow-inner rounded-md pb-12"
+                                    className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-purple-500/50 outline-none resize-none transition-all duration-300 font-light leading-relaxed shadow-inner rounded-md pb-12"
                                     placeholder="e.g. Create the main antagonist from this book, or a character based on this image..."
                                     value={genPrompt}
                                     onChange={(e) => setGenPrompt(e.target.value)}
@@ -941,7 +941,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                     type="button"
                                     onClick={handleTranslatePrompt}
                                     disabled={isTranslatingPrompt || (!genPrompt.trim() && !originalGenPrompt)}
-                                    className="absolute right-3 bottom-3 p-2 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-orange-500 rounded-md transition-colors border border-zinc-700/50 disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="absolute right-3 bottom-3 p-2 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-purple-500 rounded-md transition-colors border border-zinc-700/50 disabled:opacity-30 disabled:cursor-not-allowed"
                                     title={originalGenPrompt ? "Restore Original" : "Translate (Auto Detect)"}
                                 >
                                     {isTranslatingPrompt ? <Loader2 size={14} className="animate-spin" /> : originalGenPrompt ? <RotateCcw size={14} /> : <Languages size={14} />}
@@ -973,10 +973,10 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                     <button 
                                         type="button"
                                         onClick={() => genFileInputRef.current?.click()}
-                                        className="w-full h-24 border border-dashed border-zinc-700 rounded-md hover:bg-zinc-800/50 hover:border-orange-500/50 transition-all flex flex-col items-center justify-center gap-2 group bg-black/20"
+                                        className="w-full h-24 border border-dashed border-zinc-700 rounded-md hover:bg-zinc-800/50 hover:border-purple-500/50 transition-all flex flex-col items-center justify-center gap-2 group bg-black/20"
                                     >
                                         <div className="p-2 rounded-full bg-zinc-900 group-hover:bg-zinc-800 transition-colors">
-                                            <Upload size={16} className="text-zinc-500 group-hover:text-orange-500 transition-colors" />
+                                            <Upload size={16} className="text-zinc-500 group-hover:text-purple-500 transition-colors" />
                                         </div>
                                         <span className="text-[10px] text-zinc-500 group-hover:text-zinc-300 font-medium">Click to attach files</span>
                                     </button>
@@ -993,7 +993,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                 </button>
                                                 
                                                 {file.type.startsWith('image/') ? (
-                                                    <ImageIcon size={20} className="text-orange-500/80" />
+                                                    <ImageIcon size={20} className="text-purple-500/80" />
                                                 ) : (
                                                     <FileText size={20} className="text-blue-500/80" />
                                                 )}
@@ -1003,9 +1003,9 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                         <button 
                                             type="button"
                                             onClick={() => genFileInputRef.current?.click()}
-                                            className="flex flex-col items-center justify-center gap-1 aspect-square border border-dashed border-zinc-800 rounded-md hover:bg-zinc-800 hover:border-orange-500/50 transition-colors group bg-black/20"
+                                            className="flex flex-col items-center justify-center gap-1 aspect-square border border-dashed border-zinc-800 rounded-md hover:bg-zinc-800 hover:border-purple-500/50 transition-colors group bg-black/20"
                                         >
-                                            <Plus size={20} className="text-zinc-600 group-hover:text-orange-500 transition-colors" />
+                                            <Plus size={20} className="text-zinc-600 group-hover:text-purple-500 transition-colors" />
                                         </button>
                                     </div>
                                 )}
@@ -1024,7 +1024,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                 onClick={() => setGenLength(len)}
                                                 className={`flex-1 py-2 px-2 rounded-[4px] text-[10px] font-bold uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
                                                     genLength === len 
-                                                    ? 'bg-zinc-800 text-orange-500 shadow-sm border border-zinc-700' 
+                                                    ? 'bg-zinc-800 text-purple-500 shadow-sm border border-zinc-700' 
                                                     : 'text-zinc-600 hover:text-zinc-400 hover:bg-zinc-900 border border-transparent'
                                                 }`}
                                             >
@@ -1050,7 +1050,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                     onClick={() => setGenIncludeSequence(!genIncludeSequence)}
                                                     className={`w-full py-2 px-3 rounded-[4px] text-[10px] font-bold uppercase transition-all duration-300 flex items-center justify-between gap-2 border ${
                                                         genIncludeSequence 
-                                                        ? 'bg-zinc-800 text-orange-500 border-zinc-700' 
+                                                        ? 'bg-zinc-800 text-purple-500 border-zinc-700' 
                                                         : 'text-zinc-600 border-transparent hover:text-zinc-400'
                                                     }`}
                                                 >
@@ -1082,7 +1082,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                     onClick={() => setGenDetailedSequence(!genDetailedSequence)}
                                                     className={`w-full py-2 px-3 rounded-[4px] text-[10px] font-bold uppercase transition-all duration-300 flex items-center justify-between gap-2 border ${
                                                         genDetailedSequence 
-                                                        ? 'bg-orange-950/20 text-orange-400 border-orange-900/40' 
+                                                        ? 'bg-purple-950/20 text-purple-400 border-purple-900/40' 
                                                         : 'text-zinc-600 border-transparent hover:text-zinc-400'
                                                     }`}
                                                 >
@@ -1102,7 +1102,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                             fullWidth 
                             onClick={initiateCharGeneration}
                             disabled={(!genPrompt.trim() && genFiles.length === 0) || isGeneratingChar}
-                            className="py-5 shadow-lg shadow-orange-900/20 shrink-0"
+                            className="py-5 shadow-lg shadow-purple-900/20 shrink-0"
                         >
                             {isGeneratingChar ? (
                                 <div className="flex items-center justify-center gap-2">
@@ -1120,7 +1120,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                     ) : (
                         <div className="flex flex-col h-full animate-fade-in">
                             <div className="flex items-center justify-between mb-4">
-                                <div className="text-[10px] font-bold text-orange-500 uppercase tracking-widest flex items-center gap-2">
+                                <div className="text-[10px] font-bold text-purple-500 uppercase tracking-widest flex items-center gap-2">
                                     <FileCode size={14} /> Generator Output
                                     {isGeneratingChar && <Loader2 size={10} className="animate-spin text-zinc-500"/>}
                                     {!isGeneratingChar && <span className="text-[9px] text-zinc-600 ml-2">(Editable)</span>}
@@ -1192,9 +1192,9 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                 <div className="space-y-6 animate-slide-up-fade">
                      <div className="flex justify-center mb-8">
                         <div className="relative group cursor-pointer" onClick={() => avatarInputRef.current?.click()}>
-                             <div className="absolute inset-0 bg-orange-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                             <div className="absolute inset-0 bg-purple-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                              {formData.avatarUrl ? (
-                                <img src={formData.avatarUrl} alt="Preview" className="w-32 h-32 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-orange-500/50 transition-all duration-300 relative z-10" />
+                                <img src={formData.avatarUrl} alt="Preview" className="w-32 h-32 rounded-full object-cover ring-1 ring-zinc-800 group-hover:ring-purple-500/50 transition-all duration-300 relative z-10" />
                              ) : (
                                 <div className="w-32 h-32 rounded-full bg-zinc-900 ring-1 ring-zinc-800 flex items-center justify-center relative z-10">
                                     <UserCircle2 size={40} className="text-zinc-700" />
@@ -1202,7 +1202,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                              )}
                              <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div className="bg-black/60 rounded-full p-2">
-                                    <Upload className="text-orange-400" size={24} />
+                                    <Upload className="text-purple-400" size={24} />
                                 </div>
                              </div>
                         </div>
@@ -1213,7 +1213,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <div className="relative">
                             <input 
                             required
-                            className="w-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-orange-500/50 outline-none transition-all duration-300 font-serif tracking-wide shadow-inner select-text cursor-text"
+                            className="w-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-purple-500/50 outline-none transition-all duration-300 font-serif tracking-wide shadow-inner select-text cursor-text"
                             placeholder="e.g. Countess Isabella"
                             value={formData.name}
                             onChange={e => setFormData({...formData, name: e.target.value})}
@@ -1225,7 +1225,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Tagline</label>
                         <div className="relative">
                             <input 
-                            className="w-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-orange-500/50 outline-none transition-all duration-300 shadow-inner select-text cursor-text"
+                            className="w-full bg-black border border-zinc-800 p-4 text-zinc-200 focus:border-purple-500/50 outline-none transition-all duration-300 shadow-inner select-text cursor-text"
                             placeholder="A brief designation..."
                             value={formData.tagline}
                             onChange={e => setFormData({...formData, tagline: e.target.value})}
@@ -1242,7 +1242,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Visual Description</label>
                         <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.appearance}
                             onChange={e => setFormData({...formData, appearance: e.target.value})}
                             placeholder="Describe the entity's form..."
@@ -1254,7 +1254,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Full Background</label>
                         <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.description}
                             onChange={e => setFormData({...formData, description: e.target.value})}
                             placeholder="Detailed history and lore..."
@@ -1271,7 +1271,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Psychological Profile</label>
                         <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.personality}
                             onChange={e => setFormData({...formData, personality: e.target.value})}
                             placeholder="Traits, desires, fears..."
@@ -1284,7 +1284,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Current Scenario</label>
                         <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.scenario}
                             onChange={e => setFormData({...formData, scenario: e.target.value})}
                             placeholder="Setting the scene..."
@@ -1299,7 +1299,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         </label>
                         <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.eventSequence}
                             onChange={e => setFormData({...formData, eventSequence: e.target.value})}
                             placeholder="A sequence of events the character should follow (optional)..."
@@ -1317,7 +1317,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <div className="relative flex-1">
                             <textarea 
                             required
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.firstMessage}
                             onChange={e => setFormData({...formData, firstMessage: e.target.value})}
                             placeholder="The first words spoken..."
@@ -1329,7 +1329,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Chat Examples</label>
                          <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-400 focus:border-orange-500/50 outline-none resize-none font-mono text-xs transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-400 focus:border-purple-500/50 outline-none resize-none font-mono text-xs transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.chatExamples}
                             onChange={e => setFormData({...formData, chatExamples: e.target.value})}
                             placeholder="<START>&#10;{{user}}: Hello?&#10;{{char}}: *smirks* greetings."
@@ -1341,7 +1341,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">System Bypass (Jailbreak)</label>
                          <div className="relative flex-1">
                             <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-orange-200/80 focus:border-orange-500/50 outline-none resize-none font-mono text-xs transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-purple-200/80 focus:border-purple-500/50 outline-none resize-none font-mono text-xs transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                             value={formData.jailbreak}
                             onChange={e => setFormData({...formData, jailbreak: e.target.value})}
                             placeholder="<SYSTEM OVERRIDE>"
@@ -1372,7 +1372,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         </div>
                         <div className="relative flex-1 mb-4">
                             <textarea 
-                                className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
+                                className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-light leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-10"
                                 value={formData.style}
                                 onChange={e => setFormData({...formData, style: e.target.value})}
                                 placeholder="e.g. Responses must be long, detailed, and immersive..."
@@ -1387,7 +1387,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                 className="text-[10px] py-3 h-auto justify-start px-4 border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800 text-zinc-300" 
                                 onClick={() => addToStyle("Ensure responses are long, detailed, and immersive.")}
                             >
-                                <span className="text-orange-500 mr-2">●</span> Long Responses
+                                <span className="text-purple-500 mr-2">●</span> Long Responses
                             </Button>
                             <Button 
                                 type="button" 
@@ -1436,7 +1436,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Lorebook Name</label>
                                     <input 
-                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-orange-500/50 outline-none text-xs rounded"
+                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-purple-500/50 outline-none text-xs rounded"
                                         value={editingLorebook.name}
                                         onChange={e => setEditingLorebook({...editingLorebook, name: e.target.value})}
                                     />
@@ -1444,7 +1444,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                 <div>
                                     <label className="block text-[10px] font-bold text-zinc-600 uppercase mb-1">Description</label>
                                     <input 
-                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-orange-500/50 outline-none text-xs rounded"
+                                        className="w-full bg-black border border-zinc-800 p-2 text-zinc-200 focus:border-purple-500/50 outline-none text-xs rounded"
                                         value={editingLorebook.description || ""}
                                         onChange={e => setEditingLorebook({...editingLorebook, description: e.target.value})}
                                     />
@@ -1454,7 +1454,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                             <div className="flex-1 flex flex-col min-h-0">
                                 <div className="flex items-center justify-between mb-2 shrink-0">
                                     <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Entries ({editingLorebook.entries.length})</label>
-                                    <button type="button" onClick={addEntryToEditor} className="text-[10px] flex items-center gap-1 text-orange-500 hover:text-orange-400 font-bold uppercase">
+                                    <button type="button" onClick={addEntryToEditor} className="text-[10px] flex items-center gap-1 text-purple-500 hover:text-purple-400 font-bold uppercase">
                                         <Plus size={12} /> Add Entry
                                     </button>
                                 </div>
@@ -1465,7 +1465,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                 <div className="mt-1 text-zinc-600"><Key size={14} /></div>
                                                 <div className="flex-1">
                                                     <input 
-                                                        className="w-full bg-transparent border-b border-zinc-800 text-orange-200 text-xs py-1 focus:border-orange-500/50 outline-none placeholder-zinc-700 font-mono"
+                                                        className="w-full bg-transparent border-b border-zinc-800 text-purple-200 text-xs py-1 focus:border-purple-500/50 outline-none placeholder-zinc-700 font-mono"
                                                         placeholder="keywords, comma, separated"
                                                         value={entry.keys.join(', ')}
                                                         onChange={(e) => updateEntryInEditor(entry.id, 'keys', e.target.value)}
@@ -1491,7 +1491,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                 </div>
                                             </div>
                                             <textarea 
-                                                className="w-full bg-zinc-900/30 border border-zinc-800/50 rounded p-2 text-zinc-300 text-xs outline-none focus:border-orange-500/30 min-h-[80px] resize-y scrollbar-thin scrollbar-thumb-zinc-800"
+                                                className="w-full bg-zinc-900/30 border border-zinc-800/50 rounded p-2 text-zinc-300 text-xs outline-none focus:border-purple-500/30 min-h-[80px] resize-y scrollbar-thin scrollbar-thumb-zinc-800"
                                                 placeholder="Lore content..."
                                                 value={entry.content}
                                                 onChange={(e) => updateEntryInEditor(entry.id, 'content', e.target.value)}
@@ -1526,7 +1526,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                             </button>
                                         </>
                                     ) : (
-                                        <button type="button" onClick={() => setManageLorebookMode(true)} className="p-2 text-zinc-600 hover:text-orange-500 transition-colors" title="Manage">
+                                        <button type="button" onClick={() => setManageLorebookMode(true)} className="p-2 text-zinc-600 hover:text-purple-500 transition-colors" title="Manage">
                                             <CheckSquare size={16} />
                                         </button>
                                     )}
@@ -1546,7 +1546,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                                 {manageLorebookMode ? (
                                                     <div 
                                                         onClick={() => toggleLorebookSelection(lb.id)}
-                                                        className={`cursor-pointer ${selectedLorebooks.has(lb.id) ? 'text-orange-500' : 'text-zinc-700 hover:text-zinc-500'}`}
+                                                        className={`cursor-pointer ${selectedLorebooks.has(lb.id) ? 'text-purple-500' : 'text-zinc-700 hover:text-zinc-500'}`}
                                                     >
                                                         {selectedLorebooks.has(lb.id) ? <CheckSquare size={16}/> : <Square size={16}/>}
                                                     </div>
@@ -1560,10 +1560,10 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                             </div>
                                             {!manageLorebookMode && (
                                                 <div className="flex items-center gap-2">
-                                                    <button type="button" onClick={() => startEditingLorebook(lb)} className="text-zinc-600 hover:text-orange-400 p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit Content"><Pencil size={12} /></button>
+                                                    <button type="button" onClick={() => startEditingLorebook(lb)} className="text-zinc-600 hover:text-purple-400 p-1 opacity-0 group-hover:opacity-100 transition-opacity" title="Edit Content"><Pencil size={12} /></button>
                                                     <button type="button" onClick={() => setLorebookToDelete(lb.id)} className="text-zinc-600 hover:text-red-500 p-1 opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 size={12} /></button>
                                                     <div className="w-px h-3 bg-zinc-800 mx-1"></div>
-                                                    <button type="button" onClick={() => toggleLorebook(lb.id)} className={`transition-colors ${lb.enabled ? 'text-orange-500' : 'text-zinc-700 hover:text-zinc-500'}`}>
+                                                    <button type="button" onClick={() => toggleLorebook(lb.id)} className={`transition-colors ${lb.enabled ? 'text-purple-500' : 'text-zinc-700 hover:text-zinc-500'}`}>
                                                         {lb.enabled ? <ToggleRight size={20} /> : <ToggleLeft size={20} />}
                                                     </button>
                                                 </div>
@@ -1584,7 +1584,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         </div>
                         <div className="flex items-center gap-2">
                             {!onSaveSession ? (
-                                <span className="text-[9px] text-orange-500/80 border border-orange-900/50 bg-orange-950/20 px-2 py-1 rounded flex items-center gap-1 uppercase font-bold">
+                                <span className="text-[9px] text-purple-500/80 border border-purple-900/50 bg-purple-950/20 px-2 py-1 rounded flex items-center gap-1 uppercase font-bold">
                                     <AlertCircle size={10}/> No Session
                                 </span>
                             ) : (
@@ -1601,7 +1601,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                         </div>
                     </div>
 
-                    <div className="bg-orange-950/10 border border-orange-900/30 p-4 rounded-lg mb-4 shrink-0">
+                    <div className="bg-purple-950/10 border border-purple-900/30 p-4 rounded-lg mb-4 shrink-0">
                         <p className="text-[10px] text-zinc-400 leading-relaxed">
                             The Memory Log helps the AI retain context over long conversations. You can manually edit this or generate a summary from recent messages.
                         </p>
@@ -1609,7 +1609,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
 
                     <div className="flex-1 relative min-h-0">
                         <textarea 
-                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-orange-500/50 outline-none resize-none font-mono text-xs leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-20 rounded-md"
+                            className="w-full h-full bg-black border border-zinc-800 p-4 text-zinc-300 focus:border-purple-500/50 outline-none resize-none font-mono text-xs leading-relaxed transition-colors duration-300 shadow-inner scrollbar-thin scrollbar-thumb-zinc-800 select-text cursor-text pb-20 rounded-md"
                             value={localSummary}
                             onChange={e => setLocalSummary(e.target.value)}
                             placeholder="No memory logged yet..."
@@ -1618,7 +1618,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                             type="button"
                             onClick={handleTranslateSummary}
                             disabled={isTranslatingSummary || (!localSummary.trim() && !originalSummary)}
-                            className="absolute top-4 right-4 p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-orange-500 rounded-md transition-colors border border-zinc-700/50 disabled:opacity-30 disabled:cursor-not-allowed z-10"
+                            className="absolute top-4 right-4 p-1.5 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-400 hover:text-purple-500 rounded-md transition-colors border border-zinc-700/50 disabled:opacity-30 disabled:cursor-not-allowed z-10"
                             title={originalSummary ? "Restore Original" : "Translate (Auto Detect)"}
                         >
                             {isTranslatingSummary ? <Loader2 size={12} className="animate-spin" /> : originalSummary ? <RotateCcw size={12} /> : <Languages size={12} />}
@@ -1633,7 +1633,7 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
                                         disabled={isGeneratingSummary || !hasNewMessages || !onSummarize}
                                         className="text-left px-3 py-2 text-xs hover:bg-zinc-800 rounded text-zinc-300 hover:text-white disabled:opacity-50 flex flex-col"
                                     >
-                                        <span className="font-bold text-orange-400 flex items-center gap-2"><Plus size={12}/> Incremental Update</span>
+                                        <span className="font-bold text-purple-400 flex items-center gap-2"><Plus size={12}/> Incremental Update</span>
                                         <span className="text-[9px] text-zinc-500 mt-0.5">Append recent messages</span>
                                     </button>
                                     
@@ -1732,8 +1732,8 @@ INSTRUCTION: Output ONLY the raw content for this field. Do not include explanat
 
         {showOverwriteConfirm && (
              <div className="absolute inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                  <div className="bg-[#0a0a0a] border border-orange-900/30 p-6 rounded shadow-lg max-w-sm w-full">
-                      <h4 className="text-orange-500 font-bold mb-2">Overwrite Data?</h4>
+                  <div className="bg-[#0a0a0a] border border-purple-900/30 p-6 rounded shadow-lg max-w-sm w-full">
+                      <h4 className="text-purple-500 font-bold mb-2">Overwrite Data?</h4>
                       <p className="text-zinc-400 text-xs mb-4">Generating a new character will overwrite existing fields. Continue?</p>
                       <div className="flex justify-end gap-2">
                           <Button type="button" variant="ghost" onClick={() => setShowOverwriteConfirm(false)}>Cancel</Button>

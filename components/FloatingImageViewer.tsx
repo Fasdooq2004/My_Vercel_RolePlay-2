@@ -243,7 +243,7 @@ export const FloatingImageViewer: React.FC<FloatingImageViewerProps> = ({ src, a
                     <RotateCw size={16} />
                 </button>
                 <div className="w-px h-4 bg-zinc-700 mx-1"></div>
-                <button onClick={handleReset} className="p-1.5 text-zinc-400 hover:text-orange-500 hover:bg-orange-500/10 rounded-full active:bg-orange-500/20 transition-colors" title="Reset">
+                <button onClick={handleReset} className="p-1.5 text-zinc-400 hover:text-purple-500 hover:bg-purple-500/10 rounded-full active:bg-purple-500/20 transition-colors" title="Reset">
                     <RefreshCcw size={16} />
                 </button>
             </div>
